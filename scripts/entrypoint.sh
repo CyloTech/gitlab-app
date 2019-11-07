@@ -25,7 +25,7 @@ prometheus_monitoring['enable'] = false
 EOF
 
 if [[ ! $(cat /assets/wrapper | grep 'Cylo') ]]; then
-sed '/tail/a \
+sed -i '/tail/a \
 \
 echo "Calling back to Cylo API..." \
 if [ ! -f /etc/app_configured ]; then \
